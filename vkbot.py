@@ -34,14 +34,7 @@ class VkBot:
                         )
                     elif event.type == VkBotEventType.MESSAGE_TYPING_STATE:
                         print(f"{event.object['from_id']} печатает... для {event.object['to_id']}")
-                        # print(event.object['message']['text'])
-                        # print('i am here')
-                        # print(event)
-                        # vk.messages.send(
-                        #     user_id=event.object['message']['from_id'],
-                        #     random_id=get_random_id(),
-                        #     message='Hello'
-                        # )
+
                     elif event.type == VkBotEventType.MESSAGE_REPLY:  # возникает в случае отправки сообщения ботом
                         print('Новое сообщение:')               # событие типа ответ
 
@@ -54,11 +47,7 @@ class VkBot:
                     else:
                         print(event)
                         print(f'Получено неизвестное событие')
-                        # vk.messages.send(
-                        #     user_id=event.object['message']['from_id'],
-                        #     random_id=get_random_id(),
-                        #     message='не знаю такую команду'
-                        # )
+
                 except Exception as err:
                     print('Error', err.args)
                     pass
